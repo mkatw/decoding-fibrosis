@@ -1,0 +1,6 @@
+# Ignore notebook checkpoints
+*.ipynb_checkpoints/
+
+# Output dirs are not versioned
+omics/fibrosis_dge_interpretation/
+omics/fibrosis_soma_interpretation/
