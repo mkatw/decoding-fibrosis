@@ -5,10 +5,6 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# Input data 
-omics/data/*
-!omics/data/**/README.md
-
 # C extensions
 *.so
 
