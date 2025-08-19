@@ -1,0 +1,15 @@
+name: omics-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - jupyter
+  - pip
+  - pip:
+      - gseapy
+      - matplotlib-venn

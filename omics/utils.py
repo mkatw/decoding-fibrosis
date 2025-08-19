@@ -8,7 +8,6 @@ import warnings
 from matplotlib_venn import venn2, venn3
 import matplotlib.patheffects as path_effects
 from itertools import combinations
-import scipy.cluster.hierarchy as sch
 import gseapy as gp
 import seaborn as sns
 import matplotlib.ticker as ticker
@@ -884,55 +883,6 @@ def plot_enrichment_results_combined_with_regulation(enrichment_results, regulat
     print(f"Plot saved to {file_name}")
 
 
-def plot_dendrogram(effect_size_dict, threshold=130):
-    """
-    Generates a hierarchical clustering dendrogram based on effect sizes across metrics
-    and extracts clusters based on a specified distance threshold.
-    
-    Parameters:
-        effect_size_dict (dict): Dictionary where keys are metric names and values are Pandas DataFrames
-                                 indexed by gene names with an 'effect_size' column.
-        threshold (float): The distance threshold for cutting the dendrogram to define clusters.
-    
-    Returns:
-        pd.DataFrame: A DataFrame mapping each gene to its assigned cluster.
-    """
-    combined_dfs = []
-    
-    for metric, df in effect_size_dict.items():
-        if 'effect_size' not in df.columns:
-            raise KeyError(f"Expected 'effect_size' column in DataFrame for {metric}, but it was not found.")
-        
-        combined_dfs.append(df[['effect_size']].rename(columns={'effect_size': metric}))
-    
-    # Merge all DataFrames on index (genes)
-    merged_df = pd.concat(combined_dfs, axis=1, join='outer').fillna(0)
-    
-    # Perform hierarchical clustering
-    linkage_matrix = sch.linkage(merged_df, method='ward')
-    
-    plt.figure(figsize=(10, 6))
-    dendrogram = sch.dendrogram(linkage_matrix, labels=merged_df.index, no_labels=True)
-    
-    # Draw threshold line
-    plt.axhline(y=threshold, color='red', linestyle='--')
-    
-    # Formatting
-    plt.title("Hierarchical Clustering of Genes Based on Effect Sizes")
-    plt.xlabel("Genes")
-    plt.ylabel("Distance")
-    plt.show()
-    
-    # Extract clusters based on the threshold
-    cluster_assignments = sch.fcluster(linkage_matrix, threshold, criterion='distance')
-    
-    # Create a DataFrame mapping genes to clusters
-    cluster_df = pd.DataFrame({'Gene': merged_df.index, 'Cluster': cluster_assignments})
-    cluster_df.set_index('Gene', inplace=True)
-    
-    return cluster_df
-
-
 def extract_gene_metadata(significant_genes):
     """
     Extracts gene metadata from the significant_genes dictionary.
@@ -1129,11 +1079,14 @@ def plot_gene_effect_sizes(effect_size_dict, metric_colours, output_dir, input_t
     # Remove x-axis ticks
     plt.xticks([], [])
     
-    # Adjust legend marker size
-    legend = plt.legend(facecolor='white', framealpha=0.8, fontsize=12, loc='upper right')
-    for handle in legend.legendHandles:
-        handle.set_sizes([200])  # Increase legend marker size
-        handle.set_linewidth(4)  # Increase legend line width for visibility
+    legend = plt.legend(
+        facecolor='white',
+        framealpha=0.8,
+        fontsize=12,
+        loc='upper right',
+        markerscale=2.5,   # makes scatter markers bigger in the legend
+        handlelength=2.0,  # longer line handles
+    )
     
     plt.grid(True, linestyle='--', alpha=0.5)
     
