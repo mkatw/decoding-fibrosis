@@ -4,3 +4,9 @@
 # Output dirs are not versioned
 omics/fibrosis_dge_interpretation/
 omics/fibrosis_soma_interpretation/
+
+# macOS Finder cruft
+.DS_Store
+
+# macOS resource fork files
+._*
