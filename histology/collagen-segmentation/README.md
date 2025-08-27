@@ -83,7 +83,7 @@ Outputs go to `results/tissue_segmentation_closed/`.
 
 ### 4. Quantify collagen areas
 ```bash
-python compute_area.py
+python compute_cpa.py
 ```
 This writes `results/cpa_results.csv` with per-slide tissue area, collagen area, and collagen proportionate area (CPA).
 
