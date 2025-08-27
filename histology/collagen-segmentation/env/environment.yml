@@ -1,0 +1,21 @@
+name: segmentation_tf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scikit-image
+  - scipy
+  - tifffile
+  - opencv
+  - imageio
+  - pillow
+  - zarr
+  - openslide
+  - openslide-python
+  - pyvips
+  - h5py
+  - tqdm
+  # On Linux with NVIDIA GPU:
+  - tensorflow=2.11.*
