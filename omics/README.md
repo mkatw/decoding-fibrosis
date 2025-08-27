@@ -13,18 +13,18 @@ This repository contains code to analyse differential molecule expression result
 
 This project uses conda for environment management.
 
-'conda env create -f envs/environment-omics.yml'
-'conda activate omics-env'
+`conda env create -f envs/environment-omics.yml`
+`conda activate omics-env`
 
 Register the Jupyter kernel (one-time only):
 
-'python -m ipykernel install --user --name=omics-env --display-name "Python (omics)"'
+`python -m ipykernel install --user --name=omics-env --display-name "Python (omics)"`
 
 ### 2. Open the notebooks
 
-'jupyter notebook'
+`jupyter notebook`
 
 ## Notes
 
 All analyses are implemented in the Jupyter notebooks.
-Shared functions are defined in 'utils.py'.
+Shared functions are defined in `utils.py`.
