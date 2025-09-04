@@ -27,7 +27,7 @@ histology/
     inference.py               # core tile-wise inference
     run_segmentation.py        # wrapper: batch process all slides
     postprocess_tissue_segmentation.py  # morphological closing
-    compute_cpa.py             # collagen/tissue area quantification
+    compute_cpa.py             # collagen/tissue percentage area quantification
     wsi_reader.py              # helper for reading large slides
 ```
 
@@ -60,7 +60,7 @@ Use the wrapper script to run both collagen and tissue models in one go:
 
 ```bash
 cd histology/collagen-segmentation
-python run_segmentation.py
+python batch_segment_slides.py
 ```
 
 Options:

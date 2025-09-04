@@ -99,7 +99,7 @@ def main(args):
 
     for input_file in args.input_image:
         
-        slide_id = Path(input_file.stem).stem  # this is in case of .ome.tif files which have a double extension
+        slide_id = Path(input_file.stem).stem  # this is in case of .ome.tif files which have a "double" extension
         #slide_id = input_file.stem
         print(slide_id)
         output_file = args.output_dir.joinpath(slide_id + '.tiff')
@@ -117,7 +117,7 @@ def main(args):
             continue
 
         print('Writing to file.')
-        processor.write_to_tiff(slide_segmented, str(output_file), tile=True, tile_width=256, tile_height=256, squash=False, pyramid=True, bigtiff=True, compression='VIPS_FOREIGN_TIFF_COMPRESSION_DEFLATE', properties=False)
+        processor.write_to_tiff(slide_segmented, str(output_file), tile=True, tile_width=256, tile_height=256, squash=False, pyramid=False, bigtiff=True, compression='VIPS_FOREIGN_TIFF_COMPRESSION_DEFLATE', properties=False)
 
         end = int(time.time())
         print('Done ({} seconds)'.format(end-start))

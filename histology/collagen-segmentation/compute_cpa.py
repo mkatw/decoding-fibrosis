@@ -77,7 +77,7 @@ def main():
 
     results = []
     for coll_path, tis_path in tqdm(zip(collagen_files, tissue_files), total=len(collagen_files)):
-        slide_id = Path(coll_path).stem.replace("_collagen", "")
+        slide_id = Path(coll_path).stem
         coll_frac = positive_fraction_128(Path(coll_path))
         tis_frac  = positive_fraction_128(Path(tis_path))
         cpa = (coll_frac / tis_frac) if tis_frac > 0 else 0.0

@@ -61,13 +61,6 @@ cover/
 .DS_Store
 ._*
 
-# results / outputs
-omics/fibrosis_dge_interpretation/filtered_pathways/
-omics/fibrosis_dge_interpretation/plots/
-omics/fibrosis_dge_interpretation/reactome_results/
-omics/fibrosis_dge_interpretation/significant_DEGs/
-omics/fibrosis_dge_interpretation/metric_gene_overlap_significance.csv
-
 # Django stuff:
 *.log
 local_settings.py
@@ -156,6 +149,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+!histology/collagen-segmentation/env/environment.yml
 
 # Spyder project settings
 .spyderproject
@@ -223,6 +217,9 @@ __marimo__/
 .DS_Store
 ._*
 
-# results / outputs
+# heavy input / output data 
 omics/fibrosis_dge_interpretation/
 omics/fibrosis_soma_interpretation/
+histology/data/
+histology/results/
+
