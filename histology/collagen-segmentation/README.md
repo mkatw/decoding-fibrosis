@@ -16,7 +16,7 @@ The segmentation networks were trained on PSR slides from the CoCoMASLD cohort.
 
 ```
 histology/
-  data/                       # input slides (NDPI, SVS, TIFF)
+  data/                        # input slides (NDPI, SVS, TIFF)
   results/
     collagen_segmentation/     # model outputs: collagen masks
     tissue_segmentation_raw/   # model outputs: raw tissue masks
@@ -25,7 +25,7 @@ histology/
   collagen-segmentation/
     models/                    # pretrained U-Nets (.h5)
     inference.py               # core tile-wise inference
-    run_segmentation.py        # wrapper: batch process all slides
+    batch_segment_slides.py    # wrapper: batch process all slides
     postprocess_tissue_segmentation.py  # morphological closing
     compute_cpa.py             # collagen/tissue percentage area quantification
     wsi_reader.py              # helper for reading large slides
