@@ -58,6 +58,13 @@ The code for training both the segmentation models and the CDP classifiers will 
 
 ---
 
+## Acknowledgements
+
+This repository makes use of [wsi-reader](https://github.com/stefano-malacrino/wsi-reader)  
+by Stefano Malacrino for efficient whole-slide image handling.
+
+---
+
 ## Citation
 
 If you use this code or data, please cite:
