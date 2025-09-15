@@ -1,0 +1,27 @@
+name: decoding-fibrosis
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.10
+  # core numerics
+  - numpy=1.26.*
+  - scipy
+  # imaging & IO
+  - scikit-image
+  - opencv
+  - pillow
+  - tifffile
+  - openslide-python
+  # ML / utils
+  - scikit-learn
+  - joblib
+  - matplotlib
+  - tqdm
+  - pytorch=1.13.1
+  - torchvision=0.14.1
+  # optionally add: - cpuonly
+  - pip
+  - pip:
+      - tensorflow==2.15.*
