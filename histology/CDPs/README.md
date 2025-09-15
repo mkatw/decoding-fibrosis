@@ -22,9 +22,9 @@ All results are written to `../histology/results/`.
 
 ## Contents
 
-├── batch_process_clustering.py # CLI wrapper (entry point)
-├── cdp_processor.py # core logic (importable)
-├── kmeans_classifiers/ # pre-trained k-means + label mapping
+- `batch_process_clustering.py` # CLI wrapper (entry point)
+- `cdp_processor.py` # core logic (importable)
+- `kmeans_classifiers/` # pre-trained k-means + label mapping
 
 
 ---
