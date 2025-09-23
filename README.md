@@ -54,6 +54,7 @@ python histology/CDPs/batch_process_clustering.py
 
 Outputs will be saved under `histology/results/`.
 We cannot guarantee that the pipeline will perform reliably on PSR slides stained using protocols different from those reported in the paper.
+Please note that the pipeline was implemented for slides acquired at 40x. We haven't yet tested it at 20x.
 The code for training both the segmentation models and the CDP classifiers will be released in due course.
 
 ---
