@@ -43,8 +43,6 @@ The pipeline may be slow, particularly if no GPU is available.
 
 While you could technically bypass segmentation and start from precomputed collagen maps, this is not recommended: the results may differ subtly from those reported in the paper, and only the full pipeline is guaranteed to reproduce them.
 
-This workflow supports k=7 clusters (paper version).
-
 The classifiers were trained to handle embeddings from 512 by 512 px tiles extracted at level 0 of 40x WSIs. If your data was scanned at 20x you may need to upsample each tile before passing it to the feature extractor. I haven't tried it!
 
 GPU is optional. Pipeline defaults to CPU if no CUDA is available.
