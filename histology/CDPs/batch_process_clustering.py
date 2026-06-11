@@ -58,7 +58,7 @@ def main(args):
         predictions = get_predictions(
             slide, 0, tiles_horizontal, 512, tiles_vertical,
             mask_threshold, preprocessing_model, model,
-            kmeans, label_mapping
+            kmeans, label_mapping, sub_kmeans, sub_label_mapping
         )
 
         np.save(file_name, predictions)
