@@ -218,8 +218,10 @@ __marimo__/
 ._*
 
 # heavy input / output data 
-omics/fibrosis_dge_interpretation/
-omics/fibrosis_soma_interpretation/
 histology/data/
 histology/results/
-
+histology/collagen-segmentation/data/
+histology/collagen-segmentation/results/
+histology/collagen-segmentation/training/runs/
+omics/fibrosis_dge_interpretation/
+omics/fibrosis_soma_interpretation/

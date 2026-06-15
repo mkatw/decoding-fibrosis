@@ -3,7 +3,8 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - numpy
+  - pip
+  - numpy=1.23.5
   - pandas
   - scikit-image
   - scipy
@@ -17,5 +18,8 @@ dependencies:
   - pyvips
   - h5py
   - tqdm
+  - matplotlib
   # On Linux with NVIDIA GPU:
   - tensorflow=2.11.*
+  - pip:
+      - keras-unet-collection==0.1.13
