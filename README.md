@@ -2,7 +2,7 @@
 
 This repository contains the code accompanying our preprint:
 
-👉 [Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD](https://www.medrxiv.org/content/10.1101/2025.08.29.25334719v1)  
+👉 [Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD](https://www.medrxiv.org/content/10.1101/2025.08.29.25334719v1.full)  
 
 A test case with expected results are archived on Zenodo:  
 👉 [Zenodo record 16967316](https://zenodo.org/records/16967316)
