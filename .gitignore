@@ -220,6 +220,8 @@ __marimo__/
 # heavy input / output data 
 histology/data/
 histology/results/
+histology/CDPs/training/data/
+histology/CDPs/training/models/
 histology/collagen-segmentation/data/
 histology/collagen-segmentation/results/
 histology/collagen-segmentation/training/runs/
