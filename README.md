@@ -1,10 +1,10 @@
 # Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD
 
-This repository contains the code accompanying our preprint:
+This repository contains the code accompanying our paper:
 
-👉 [Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD](https://www.medrxiv.org/content/10.1101/2025.08.29.25334719v1.full)  
+👉 [Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD](https://journals.lww.com/hep/abstract/9900/decoding_fibrosis__transcriptomic_and_clinical.1633.aspx)  
 
-A test case with expected results are archived on Zenodo:  
+A test case with expected results and training data are archived on Zenodo:  
 👉 [Zenodo record 16967316](https://zenodo.org/records/16967316)
 
 ---
@@ -70,9 +70,9 @@ by Stefano Malacrino for efficient whole-slide image handling.
 
 If you use this code or data, please cite:
 
-- Wojciechowska MK, et al.  
+- Wojciechowska MK, Thing M, et al.  
   *Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD.*  
-  medRxiv, 2025. doi: [10.1101/2025.08.29.25334719v1](https://www.medrxiv.org/content/10.1101/2025.08.29.25334719v1)
+  Hepatology, 2026. doi: [10.1097/HEP.0000000000001811](https://journals.lww.com/hep/abstract/9900/decoding_fibrosis__transcriptomic_and_clinical.1633.aspx)
 
 - Zenodo record: [https://zenodo.org/records/16967316](https://zenodo.org/records/16967316)
 
