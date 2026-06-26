@@ -1,6 +1,6 @@
 # CDP Clustering Training
 
-This folder contains the public training workflow for the collagen deposition
+This folder contains the training workflow for the collagen deposition
 phenotype (CDP) k-means classifiers.
 
 The paper inference pipeline uses:
@@ -13,11 +13,16 @@ The paper inference pipeline uses:
 
 ## Reproducibility Note
 
-The original CDP clustering tile pool was a stored tissue-tile sample. The
-random seed used to generate that exact pool was not retained. For exact
-reproduction of the paper classifiers, use the released clustering tile or
-feature artifact when available. The scripts here can regenerate a comparable
-pool from PSR slides, but the sampled tiles may not be identical.
+The random seed used to generate the original CDP clustering tile pool was not
+retained. For exact reproduction of the paper classifiers, use the released
+trained models. The scripts here can regenerate a comparable training pool from
+PSR slides, but the sampled tiles may not be identical.
+
+## Environment
+
+Use the CDP inference environment from `histology/CDPs/environment.yml`. The
+training and K-search scripts share the same core dependencies as the inference
+pipeline, with `matplotlib` used for the diagnostic plots.
 
 ## Workflow
 
@@ -45,7 +50,48 @@ python histology/CDPs/training/segment_tile_pool.py \
 By default, this writes 8-bit collagen probability maps, matching the inference
 pipeline. Use `--binary` only for experiments.
 
-### 3. Train CDP Classifiers
+### 3. Search Candidate Cluster Numbers
+
+The original model-development workflow was iterative: fit clusters for a range
+of K values, inspect summary metrics, and visually check example tiles from each
+cluster.
+
+```bash
+python histology/CDPs/training/search_cdp_clusters.py \
+  --tile-dir histology/CDPs/training/data/collagen_tiles \
+  --out-dir histology/CDPs/training/models/k_search \
+  --feature-cache histology/CDPs/training/models/cdp_training_features.npz \
+  --k-min 2 \
+  --k-max 10 \
+  --algorithm kmeans
+```
+
+This writes:
+
+```text
+k_search_metrics.csv
+k_search_cluster_stats.csv
+k_search_metrics.png
+k_search_cluster_sizes.png
+k_search_mean_collagen_fraction.png
+k02/random_examples.png
+k02/centroid_examples.png
+...
+```
+
+`random_examples.png` and `centroid_examples.png` are the main sanity-check
+plots: each row is one collagen-sorted cluster, with representative tiles from
+that cluster.
+
+Useful options:
+
+- `--algorithm minibatch_kmeans` for faster approximate k-means on large tile pools
+- `--algorithm agglomerative_ward` for Ward agglomerative clustering experiments
+- `--embedding-method pca` to add per-K embedding and silhouette plots
+- `--silhouette-sample-size 0` to compute silhouette diagnostics on all tiles
+- `--copy-clustered-images` to copy every tile into per-cluster folders
+
+### 4. Train CDP Classifiers
 
 ```bash
 python histology/CDPs/training/train_cdp_clusters.py \

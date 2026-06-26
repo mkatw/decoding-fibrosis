@@ -55,7 +55,8 @@ The k-means classifiers can be retrained from a pool of PSR tissue tiles. See
 
 1. sample tissue-containing PSR tiles
 2. segment the tile pool with the collagen U-Net
-3. extract ResNet18 embeddings and fit the primary/sub-cluster k-means models
+3. search candidate K values with cluster example plots
+4. extract ResNet18 embeddings and fit the primary/sub-cluster k-means models
 
 The original paper tile pool was stored, but the random seed used to generate it
 was not retained. Use the released clustering tile/feature artifact for exact
