@@ -18,6 +18,7 @@ dependencies:
   - scikit-learn
   - joblib
   - matplotlib
+  - umap-learn
   - tqdm
   - pytorch=1.13.1
   - torchvision=0.14.1
