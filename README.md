@@ -5,7 +5,7 @@ This repository contains the code accompanying our paper:
 👉 [Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD](https://journals.lww.com/hep/abstract/9900/decoding_fibrosis__transcriptomic_and_clinical.1633.aspx)  
 
 A test case with expected results and training data are archived on Zenodo:  
-👉 [Zenodo record 16967316](https://zenodo.org/records/16967316)
+👉 [Zenodo record 16967316](https://zenodo.org/records/20717027)
 
 ---
 
@@ -74,6 +74,6 @@ If you use this code or data, please cite:
   *Decoding Fibrosis: Transcriptomic and Clinical Insights via AI-Derived Collagen Deposition Phenotypes in MASLD.*  
   Hepatology, 2026. doi: [10.1097/HEP.0000000000001811](https://journals.lww.com/hep/abstract/9900/decoding_fibrosis__transcriptomic_and_clinical.1633.aspx)
 
-- Zenodo record: [https://zenodo.org/records/16967316](https://zenodo.org/records/16967316)
+- Zenodo record: [https://zenodo.org/records/16967316](https://zenodo.org/records/20717027)
 
 This project is licensed under the MIT License.
