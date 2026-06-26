@@ -15,14 +15,14 @@ The paper inference pipeline uses:
 
 The random seed used to generate the original CDP clustering tile pool was not
 retained. For exact reproduction of the paper classifiers, use the released
-trained models. The scripts here can regenerate a comparable training pool from
-PSR slides, but the sampled tiles may not be identical.
+trained models. The scripts here can regenerate a comparable training pool,
+but the sampled tiles may not be identical.
 
 ## Environment
 
 Use the CDP inference environment from `histology/CDPs/environment.yml`. The
 training and K-search scripts share the same core dependencies as the inference
-pipeline, with `matplotlib` used for the diagnostic plots.
+pipeline, with `matplotlib` and `umap-learn` used for diagnostic plots.
 
 ## Workflow
 
@@ -87,7 +87,8 @@ Useful options:
 
 - `--algorithm minibatch_kmeans` for faster approximate k-means on large tile pools
 - `--algorithm agglomerative_ward` for Ward agglomerative clustering experiments
-- `--embedding-method pca` to add per-K embedding and silhouette plots
+- `--embedding-method pca` or `--embedding-method umap` to add per-K embedding
+  and silhouette plots
 - `--silhouette-sample-size 0` to compute silhouette diagnostics on all tiles
 - `--copy-clustered-images` to copy every tile into per-cluster folders
 
